@@ -112,6 +112,98 @@ function challenge_hoist_5() {
 }
 
 
+function doSomeThing() {
+    val = 543
+}
+
+/**
+ * Hãy đặt giá trị cho A sao cho giá trị return là `true`.
+ */
+function challenge_scope_1() {
+    /********************************************************/
+    const A = null
+    /********************************************************/
+
+    const foo = function () {
+        return val
+    }
+
+    doSomeThing()
+    return (A === foo() && A == global['val'])
+}
+
+/**
+ * Hãy điền vào chỗ trống để không cho phép tự động khai báo biến toàn cục.
+ */
+function challenge_scope_2() {
+    /********************************************************/
+    // ĐIỀN VÀO CHỖ TRỐNG
+
+    /********************************************************/
+
+    const A = 987
+
+    const foo = function () {
+        return val
+    }
+    const assignGlobal = function () {
+        val = 987
+    }
+
+    assignGlobal()
+    return (A === foo() && A == global['val'])
+}
+
+
+/**
+ * Hãy đặt giá trị cho RESULT sao cho giá trị return là `true`
+ */
+function challenge_scope_3() {
+    /********************************************************/
+    const RESULT = null
+    /********************************************************/
+
+    var a = 1
+
+    const add = function (target) {
+        return target + a
+    }
+
+    const doIt = function () {
+        var a = 5
+        return add(10)
+    }
+
+    return RESULT === doIt()
+}
+
+
+/**
+ * Hãy đặt giá trị cho RESULT sao cho giá trị return là `true`
+ */
+function challenge_scope_4() {
+    /********************************************************/
+    const RESULT = null
+    /********************************************************/
+
+    const a = 1
+
+    const doIt = function (condition) {
+        const arr = [1, 2, 3]
+        for (let a = 0; a < arr.length; ++a) {
+            // Do nothing
+        }
+
+        for (var b = arr.length; b >= 0; --b) {
+            // Do nothing
+        }
+        return a + b
+    }
+
+    return RESULT === doIt()
+}
+
+
 /**
  * Hãy đặt giá trị cho RESULT sao cho giá trị return là `true`
  */
@@ -359,52 +451,104 @@ function challenge_object_2() {
     return (obj[A] === 'Planet Earth' && typeof obj.bar === B)
 }
 
-
-function doSomeThing() {
-    val = 543
-}
-
 /**
- * Hãy đặt giá trị cho A sao cho giá trị return là `true`.
+ * Hãy đặt giá trị cho RESULT sao cho giá trị return là `true`.
  */
-function challenge_scope_1() {
+function challenge_object_3() {
     /********************************************************/
-    const A = null
+    const RESULT = null
     /********************************************************/
 
-    const foo = function() {
-        return val
+    const objOne = {
+        name: 'Code',
+        age: 20,
     }
-
-    doSomeThing()
-    return (A === foo() && A == global['val'])
+    const objTwo = {
+        name: 'Code',
+        age: 20,
+    }
+    const isEqual = objOne === objTwo
+    return RESULT === isEqual
 }
 
+
 /**
- * Hãy điền vào chỗ trống để không cho phép tự động khai báo biến toàn cục.
+ * Hãy điền vào chỗ trống
  */
-function challenge_scope_2() {
+function challenge_object_4() {
+    /********************************************************/
+    const isEqual = (objA, objB) => {
+        // ĐIỀN VÀO CHỖ TRỐNG
+    }
+    /********************************************************/
+
+    const objOne = {
+        name: 'Code',
+        age: 20,
+    }
+    const objTwo = {
+        name: 'Code',
+        age: 20,
+        // address: 'Saigon',
+    }
+    return isEqual(objOne, objTwo)
+}
+
+
+/**
+ * Hãy điền vào chỗ trống
+ */
+function challenge_object_5() {
+    /********************************************************/
+    const clone = (source) => {
+        // ĐIỀN VÀO CHỖ TRỐNG
+    }
+    /********************************************************/
+
+    const isEqual = (objA, objB) => {
+        // From challenge_object_4
+    }
+    const objSource = {
+        name: 'Code',
+        age: 20,
+        address: 'Saigon',
+    }
+    const objCloned = clone(objSource)
+
+    return objSource !== objCloned && isEqual(objSource, objCloned)
+}
+
+
+/**
+ * Hãy điền vào chỗ trống
+ */
+function challenge_object_6() {
+    /********************************************************/
+    const obj = {
+        value: 6,
+        // ĐIỀN VÀO CHỖ TRỐNG
+    }
+    /********************************************************/
+
+    const msg = 'Value is: '
+    return (msg + obj === 'Value is: six')
+}
+
+
+/**
+ * Hãy điền vào chỗ trống
+ */
+function challenge_object_7() {
     /********************************************************/
     // ĐIỀN VÀO CHỖ TRỐNG
-
+    // const a = ???
     /********************************************************/
 
-    const A = 987
-
-    const foo = function() {
-        return val
-    }
-    const assignGlobal = function() {
-        val = 987
-    }
-
-    assignGlobal()
-    return (A === foo() && A == global['val'])
+    return (a == 1 && a == 2 && a == 3)
 }
 
 /**
  * Hãy điền vào chỗ trống
- * 
  */
 function challenge_dynamic_type_1() {
     const A = 123
@@ -426,8 +570,25 @@ function challenge_dynamic_type_1() {
  * Hãy đặt giá trị cho A sao cho giá trị return là `true`.
  */
 function challenge_dynamic_type_2() {
+    /********************************************************/
     const A = null
+    /********************************************************/
+
     return (1 + 2 + '3' === A)
+}
+
+/**
+ * Hãy điền vào chỗ trống
+ */
+function challenge_dynamic_type_3() {
+    const arr = [1, 2, 3]
+
+    /********************************************************/
+    // ĐIỀN VÀO CHỖ TRỐNG
+    const strArr = '' //???
+    /********************************************************/
+
+    return strArr === (arr + '')
 }
 
 
@@ -471,6 +632,10 @@ module.exports = {
     challenge_hoist_3,
     challenge_hoist_4,
     challenge_hoist_5,
+    challenge_scope_1,
+    challenge_scope_2,
+    challenge_scope_3,
+    challenge_scope_4,
     challenge_array_1,
     challenge_array_2,
     challenge_array_3,
@@ -487,10 +652,14 @@ module.exports = {
     challenge_equal_6,
     challenge_object_1,
     challenge_object_2,
-    challenge_scope_1,
-    challenge_scope_2,
+    challenge_object_3,
+    challenge_object_4,
+    challenge_object_5,
+    challenge_object_6,
+    challenge_object_7,
     challenge_dynamic_type_1,
     challenge_dynamic_type_2,
+    challenge_dynamic_type_3,
     challenge_function_1,
     challenge_function_2,
 }
