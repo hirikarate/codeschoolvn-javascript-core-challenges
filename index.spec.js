@@ -124,7 +124,7 @@ describe('challenge_async_11', () => {
     })
 })
 
-describe.only('challenge_async_12', () => {
+describe('challenge_async_12', () => {
     it('Should deep equal', (done) => {
         chai.spy.on(Promise, 'all')
 
@@ -139,17 +139,24 @@ describe.only('challenge_async_12', () => {
     })
 })
 
-describe('challenge_scope_2', () => {
-    it('Should equal true', () => {
-        let chal, exception
-        try {
-            chal = quiz.challenge_scope_2()
-        }
-        catch (err) {
-            exception = err
-        }
-        expect(chal).not.to.exist
-        expect(exception).to.exist
-        expect(exception.message).to.contain('val is not defined')
+describe('challenge_async_13', () => {
+    it('Should deep equal', (done) => {
+        const arr = []
+        const chal = quiz.challenge_async_13(arr)
+        setTimeout(() => {
+            expect(chal).to.deep.equal(arr)
+            done()
+        }, 1000)
+    })
+})
+
+describe('challenge_async_14', () => {
+    it('Should deep equal', (done) => {
+        const arr = []
+        const chal = quiz.challenge_async_14(arr)
+        setTimeout(() => {
+            expect(chal).to.deep.equal(arr)
+            done()
+        }, 1000)
     })
 })

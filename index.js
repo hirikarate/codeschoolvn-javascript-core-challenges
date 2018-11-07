@@ -309,6 +309,44 @@ function challenge_async_12(arr) {
 }
 
 
+/**
+ * Hãy đặt giá trị cho RESULT sao cho kết quả return là true
+ */
+function challenge_async_13(arr) {
+    // Biết: arr = []
+
+    // Hãy đặt giá trị cho RESULT sao cho RESULT giống với giá trị cuối cùng của `arr`
+    /********************************************************/
+    const RESULT = []
+    /********************************************************/
+
+    for (var i = 1; i <= 5; ++i) {
+        setTimeout(() => arr.push(i), 0)
+    }
+
+    return RESULT
+}
+
+
+/**
+ * Hãy đặt giá trị cho RESULT sao cho kết quả return là true
+ */
+function challenge_async_14(arr) {
+    // Biết: arr = []
+
+    // Hãy đặt giá trị cho RESULT sao cho RESULT giống với giá trị cuối cùng của `arr`
+    /********************************************************/
+    const RESULT = []
+    /********************************************************/
+
+    for (let i = 1; i <= 5; ++i) {
+        setTimeout(() => arr.push(i), 0)
+    }
+
+    return RESULT
+}
+
+
 module.exports = {
     challenge_async_1,
     challenge_async_2,
@@ -322,4 +360,6 @@ module.exports = {
     challenge_async_10,
     challenge_async_11,
     challenge_async_12,
+    challenge_async_13,
+    challenge_async_14,
 }
