@@ -130,6 +130,20 @@ describe('challenge_array_8', () => {
     })
 })
 
+describe('challenge_array_9', () => {
+    it('Should equal true', () => {
+        const chal = quiz.challenge_array_9()
+        expect(chal).to.be.true
+    })
+})
+
+describe('challenge_array_10', () => {
+    it('Should equal true', () => {
+        const chal = quiz.challenge_array_10()
+        expect(chal).to.be.true
+    })
+})
+
 describe('challenge_equal_1', () => {
     it('Should equal true', () => {
         const chal = quiz.challenge_equal_1()
@@ -168,6 +182,13 @@ describe('challenge_equal_5', () => {
 describe('challenge_equal_6', () => {
     it('Should equal true', () => {
         const chal = quiz.challenge_equal_6()
+        expect(chal).to.be.true
+    })
+})
+
+describe('challenge_equal_7', () => {
+    it('Should equal true', () => {
+        const chal = quiz.challenge_equal_7()
         expect(chal).to.be.true
     })
 })
@@ -224,6 +245,48 @@ describe('challenge_object_7', () => {
 describe('challenge_object_8', () => {
     it('Should equal true', () => {
         const chal = quiz.challenge_object_8()
+        expect(chal).to.be.true
+    })
+})
+
+describe('challenge_object_9', () => {
+    it('Should equal true', () => {
+        const chal = quiz.challenge_object_9()
+        expect(chal).to.be.true
+    })
+})
+
+describe('challenge_object_10', () => {
+    it('Should equal true', () => {
+        const chal = quiz.challenge_object_10()
+        expect(chal).to.be.true
+    })
+})
+
+describe('challenge_object_11', () => {
+    it('Should equal true', () => {
+        const chal = quiz.challenge_object_11()
+        expect(chal).to.be.true
+    })
+})
+
+describe('challenge_object_12', () => {
+    it('Should equal true', () => {
+        const chal = quiz.challenge_object_12()
+        expect(chal).to.be.true
+    })
+})
+
+describe('challenge_object_13', () => {
+    it('Should equal true', () => {
+        const chal = quiz.challenge_object_13()
+        expect(chal).to.be.true
+    })
+})
+
+describe('challenge_object_14', () => {
+    it('Should equal true', () => {
+        const chal = quiz.challenge_object_14()
         expect(chal).to.be.true
     })
 })

@@ -117,11 +117,11 @@ function doSomeThing() {
 }
 
 /**
- * Hãy đặt giá trị cho A sao cho giá trị return là `true`.
+ * Hãy đặt giá trị cho RESULT sao cho giá trị return là `true`.
  */
 function challenge_scope_1() {
     /********************************************************/
-    const A = null
+    const RESULT = null
     /********************************************************/
 
     const foo = function () {
@@ -129,7 +129,7 @@ function challenge_scope_1() {
     }
 
     doSomeThing()
-    return (A === foo() && A == global['val'])
+    return (RESULT === foo() && RESULT == global['val'])
 }
 
 /**
@@ -186,7 +186,8 @@ function challenge_scope_4() {
     const RESULT = null
     /********************************************************/
 
-    const a = 1
+    const a = 1,
+        b = 2
 
     const doIt = function (condition) {
         const arr = [1, 2, 3]
@@ -267,7 +268,7 @@ function challenge_array_4() {
 
 
 /**
- * Hãy điền vào chỗ trống
+ * 
  */
 function challenge_array_5() {
     /********************************************************/
@@ -277,7 +278,13 @@ function challenge_array_5() {
         //	- for (..;..;++i)
         //	- for in
         //	- for of
+        // ???
+
+
         // Cách 2 (Functional): array.every(..)
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every
+        // ???
+
     }
     /********************************************************/
 
@@ -330,10 +337,68 @@ function challenge_array_8() {
     const inc = val => ++val
     const mappedArr = arr.map(inc)
     const reducedValue = mappedArr.reduce((prev, cur) => cur + prev, 0)
-    console.log({
-        reducedValue})
 
     return RESULT === reducedValue
+}
+
+
+/**
+ * Hãy đặt giá trị cho RESULT_ONE và RESULT_TWO sao cho giá trị return là `true`
+ */
+function challenge_array_9() {
+    /********************************************************/
+    const RESULT_ONE = null
+    const RESULT_TWO = null
+    /********************************************************/
+
+    function add([one, two, three]) {
+        return [two, one + three]
+    }
+
+    const arr = [2, 3]
+    const [resultOne, resultTwo] = add(arr)
+
+    return RESULT_ONE === resultOne && 
+        (RESULT_TWO + '') === (resultTwo + '') // Why + '' ?
+}
+
+
+/**
+ * 
+ */
+function challenge_array_10() {
+    /********************************************************/
+    // ĐIỀN VÀO CHỖ TRỐNG
+
+    // Cách 0: NOT working ;) ;p
+    // function swap(first, sec) {
+    //     const temp = first
+    //     first = sec
+    //     sec = temp
+    // }
+
+    // Cách 1:
+        // C 1.1: Chỉ 01 dòng code
+        // C 1.2: Chuyển (C 1.1) sang arrow function
+    function swap(first, sec) {
+        // ???
+    }
+
+    // Cách 2: "arguments" keyword
+    // function swap ???
+
+    // Cách 3:
+        // C 3.1: Rest parameters
+        // C 3.2: Array destructuring
+    // function swap ???
+
+    /********************************************************/
+
+    const valOne = 123
+    const valTwo = 456
+    const [newOne, newTwo] = swap(valOne, valTwo)
+
+    return valOne === newTwo && valTwo === newOne
 }
 
 
@@ -350,28 +415,28 @@ function challenge_equal_1() {
 }
 
 /**
- * Hãy đặt giá trị cho A và B sao cho giá trị return là `true`.
+ * Hãy đặt giá trị cho RESULT_ONE và RESULT_TWO sao cho giá trị return là `true`.
  */
 function challenge_equal_2() {
     /********************************************************/
-    const A = 0
-    const B = 0
+    const RESULT_ONE = 0
+    const RESULT_TWO = 0
     /********************************************************/
 
     const arr = [2, 4, 6]
-    return (A == arr[3] && B == arr[3])
+    return (RESULT_ONE == arr[3] && RESULT_TWO == arr[3])
 }
 
 /**
- * Hãy đặt giá trị cho A sao cho giá trị return là `true`.
+ * Hãy đặt giá trị cho RESULT sao cho giá trị return là `true`.
  */
 function challenge_equal_3() {
     /********************************************************/
-    const A = null
+    const RESULT = null
     /********************************************************/
     const B = 3
 
-    const C = A + B
+    const C = RESULT + B
     return (C == '123' && C !== '123')
 }
 
@@ -397,6 +462,19 @@ function challenge_equal_5() {
     const RESULT = null
     /********************************************************/
 
+    const C = 1 + 2 - '3'
+    return (C === RESULT)
+}
+
+
+/**
+ * Hãy đặt giá trị cho RESULT sao cho giá trị return là `true`.
+ */
+function challenge_equal_6() {
+    /********************************************************/
+    const RESULT = null
+    /********************************************************/
+
     const A = !'false'
     const B = Boolean(0)
     const isEqual = !!(A === B)
@@ -407,7 +485,7 @@ function challenge_equal_5() {
 /**
  * Hãy đặt giá trị cho RESULT sao cho giá trị return là `true`.
  */
-function challenge_equal_6() {
+function challenge_equal_7() {
     /********************************************************/
     const RESULT = null
     /********************************************************/
@@ -420,40 +498,40 @@ function challenge_equal_6() {
 
 
 /**
- * Hãy đặt giá trị cho A và B sao cho giá trị return là `true`.
+ * Hãy đặt giá trị cho RESULT_ONE và RESULT_TWO sao cho giá trị return là `true`.
  */
 function challenge_object_1() {
     /********************************************************/
-    const A = null
-    const B = null
+    const RESULT_ONE = null
+    const RESULT_TWO = null
     /********************************************************/
 
     let obj = {
         name: 100
     }
     obj.age = 'CodeSchool'
-    return (obj.name === A && obj[B] === 'CodeSchool')
+    return (obj.name === RESULT_ONE && obj[RESULT_TWO] === 'CodeSchool')
 }
 
 /**
- * Hãy đặt giá trị cho A và B sao cho giá trị return là `true`.
+ * Hãy đặt giá trị cho RESULT_ONE và RESULT_TWO sao cho giá trị return là `true`.
  */
 function challenge_object_2() {
     /********************************************************/
-    const A = null
-    const B = null
+    const RESULT_ONE = null
+    const RESULT_TWO = null
     /********************************************************/
 
     let prop = ['a', 'd', 'd', 'r']
     let obj = {
-        [prop.join('')]: 'Planet Earth',
+        [prop.join('')]: 'Planet Earth', // Computed property [ES6]
         bar(msg) {
             console.log(msg)
         }
 
     }
     obj.age = 'CodeSchool'
-    return (obj[A] === 'Planet Earth' && typeof obj.bar === B)
+    return (obj[RESULT_ONE] === 'Planet Earth' && typeof obj.bar === RESULT_TWO)
 }
 
 /**
@@ -465,11 +543,11 @@ function challenge_object_3() {
     /********************************************************/
 
     const objOne = {
-        name: 'Code',
+        name: 'CodeSchool',
         age: 20,
     }
     const objTwo = {
-        name: 'Code',
+        name: 'CodeSchool',
         age: 20,
     }
     const isEqual = objOne === objTwo
@@ -478,24 +556,31 @@ function challenge_object_3() {
 
 
 /**
- * Hãy điền vào chỗ trống
+ * 
  */
 function challenge_object_4() {
     /********************************************************/
     const isEqual = (objA, objB) => {
         // ĐIỀN VÀO CHỖ TRỐNG
         // - Cách 1: for in
+
+
         // - Cách 2: for of
+        // Hint: Object.keys(), Object.values(), Object.entries()
+
+
         // - Cách 3 (Functional): array.every(..)
+
+
     }
     /********************************************************/
 
     const objOne = {
-        name: 'Code',
+        name: 'CodeSchool',
         age: 20,
     }
     const objTwo = {
-        name: 'Code',
+        name: 'CodeSchool',
         age: 20,
         // address: 'Saigon',
     }
@@ -504,38 +589,47 @@ function challenge_object_4() {
 
 
 /**
- * Hãy điền vào chỗ trống
+ * 
  */
 function challenge_object_5() {
-    /********************************************************/
-    const clone = (source) => {
+    const shallowClone = (source) => {
+        /********************************************************/
         // ĐIỀN VÀO CHỖ TRỐNG
+        // Cách 1: Loop
+
+        // Cách 2: Object.assign()
+
+        // Cách 3: Spread operator [ES6]
+
+        // Cách 4: JSON.stringify() + JSON.parse()
+
+        /********************************************************/
     }
-    /********************************************************/
 
     const isEqual = (objA, objB) => {
         // From challenge_object_4
     }
     const objSource = {
-        name: 'Code',
+        name: 'CodeSchool',
         age: 20,
         address: 'Saigon',
     }
-    const objCloned = clone(objSource)
+    const objCloned = shallowClone(objSource)
 
     return objSource !== objCloned && isEqual(objSource, objCloned)
 }
 
 
 /**
- * Hãy điền vào chỗ trống
+ * Read more: https://medium.freecodecamp.org/js-type-coercion-explained-27ba3d9a2839
  */
 function challenge_object_6() {
     const obj = {
         value: 6,
     	/********************************************************/
         // ĐIỀN VÀO CHỖ TRỐNG
-        // ???
+        // Hint: valueOf / toString / Symbol.toPrimitive
+
     	/********************************************************/
     }
 
@@ -545,7 +639,7 @@ function challenge_object_6() {
 
 
 /**
- * Hãy điền vào chỗ trống
+ * 
  */
 function challenge_object_7() {
     /********************************************************/
@@ -556,19 +650,18 @@ function challenge_object_7() {
     return (a == 1 && a == 2 && a == 3)
     /* Hint:
      * Cách 1: valueOf / toString
-     *   - ++
-     *   - array.pop
      * Cách 2: Symbol.toPrimitive
-     *   - Object property++
-     *   - Global variable++
-     *   - Curried function: ((i) => () => ++i) (0)
+     *   - C 2.1: Object property++
+     *   - C 2.2: Global variable++
+     *   - C 2.3: array.pop
+     *   - C 2.4: Curried function: ((i) => () => ++i) (0)
      * Cách 3: array.join = array.shift
      */
 }
 
 
 /**
- * Hãy điền vào chỗ trống
+ * 
  */
 function challenge_object_8() {
     /********************************************************/
@@ -583,7 +676,202 @@ function challenge_object_8() {
 }
 
 /**
- * Hãy điền vào chỗ trống
+ *
+ */
+function challenge_object_9() {
+    const obj = {
+        name: 'CodeSchool',
+        age: 20,
+    }
+
+    /********************************************************/
+    // CHUYỂN ĐOẠN MÃ SAU SANG DẠNG "Object destructuring"
+    const name = obj.name,
+        tuoi = obj.age
+    /********************************************************/
+
+    return name === obj.name && tuoi === obj.age
+}
+
+
+/**
+ * Hãy đặt giá trị cho NAME và AGE sao cho giá trị return là `true`.
+ */
+function challenge_object_10() {
+    /********************************************************/
+    const NAME = null
+    const AGE = null
+    /********************************************************/
+
+    const objOne = {
+        name: 'JavaScript',
+        age: 22,
+    }
+    const objTwo = {
+        name: 'ECMAScript',
+        ...objOne,
+        age: 44,
+    }
+
+    return objTwo.name === NAME && objTwo.age === AGE
+}
+
+
+/**
+ * 
+ */
+function challenge_object_11() {
+    const objBase = {
+        name: 'JavaScript',
+        age: 22,
+    }
+
+    const objChild = Object.create(objBase)
+    objChild.address = 'earth'
+    objChild.friend = 'TypeScript'
+
+    const serialized = []
+    /********************************************************/
+    // THAY ĐỔI ĐOẠN MÃ SAU ĐỂ KẾT QUẢ RETURN `true` 
+    // Cách 1: object.hasOwnProperty()
+    // Cách 2: Object.getOwnPropertyNames()
+    for (let prop in objChild) {
+        serialized.push(prop)
+    }
+    /********************************************************/
+    console.log({ serialized })
+
+    return serialized.join(',') === 'address,friend'
+}
+
+
+/**
+ * 
+ */
+function challenge_object_12() {
+    const obj = {
+        name: 'JavaScript',
+        age: 22,
+    }
+    /********************************************************/
+    // THAY ĐỔI ĐOẠN MÃ SAU ĐỂ KẾT QUẢ RETURN `true` 
+    // (Object.defineProperty/Object.defineProperties + enumerable)
+    obj.address = 'earth'
+    obj.friend = 'TypeScript'
+    /********************************************************/
+
+    const serialized = []
+    for (let val of Object.values(obj)) {
+        serialized.push(val)
+    }
+    console.log({ serialized })
+
+    return serialized.join(',') === 'JavaScript,22'
+}
+
+
+/**
+ * Hãy đặt các giá trị sao cho giá trị return là `true`.
+ */
+function challenge_object_13() {
+    /********************************************************/
+    const EXCEPTION_ONE = null
+    const EXCEPTION_TWO = null
+    const RESULT_ONE = null
+    const RESULT_TWO = null
+    /********************************************************/
+
+    const objOne = {
+        name: 'JavaScript',
+        age: 55,
+    }
+
+    const objTwo = {
+        name: 'CoffeeScript',
+        age: 11,
+    }
+
+    const sealed = Object.seal(objOne)
+    const frozen = Object.freeze(objTwo)
+    let navyException = {},
+        letItGoException = {}
+
+    try {
+        sealed.age = 222
+    } catch (err) {
+        navyException = err
+    }
+
+    try {
+        frozen.name = 'Elsa'
+    } catch (err) {
+        letItGoException = err
+    }
+    // console.log({navyException})
+    // console.log({letItGoException})
+    // console.log({seal: objOne.age})
+    // console.log({frozen: objTwo.name})
+
+    return (navyException instanceof Error) === EXCEPTION_ONE && 
+        (letItGoException instanceof Error) === EXCEPTION_TWO &&
+        sealed.age === RESULT_ONE && 
+        frozen.name === RESULT_TWO
+}
+
+
+/**
+ * Hãy đặt các giá trị sao cho giá trị return là `true`.
+ */
+function challenge_object_14() {
+    'use strict'
+
+    /********************************************************/
+    const EXCEPTION_ONE = null
+    const EXCEPTION_TWO = null
+    const RESULT_ONE = null
+    const RESULT_TWO = null
+    /********************************************************/
+
+    const objOne = {
+        name: 'JavaScript',
+        age: 55,
+    }
+
+    const objTwo = {
+        name: 'CoffeeScript',
+        age: 11,
+    }
+
+    Object.seal(objOne)
+    Object.freeze(objTwo)
+    let navyException = {},
+        letItGoException = {}
+
+    try {
+        objOne.age = 222
+    } catch (err) {
+        navyException = err
+    }
+
+    try {
+        objTwo.name = 'Elsa'
+    } catch (err) {
+        letItGoException = err
+    }
+    // console.log({navyException})
+    // console.log({letItGoException})
+    // console.log({seal: objOne.age})
+    // console.log({frozen: objTwo.name})
+
+    return (navyException instanceof Error) === EXCEPTION_ONE && 
+        (letItGoException instanceof Error) === EXCEPTION_TWO &&
+        objOne.age === RESULT_ONE && 
+        objTwo.name === RESULT_TWO
+}
+
+
+/**
+ * 
  */
 function challenge_dynamic_type_1() {
     const A = 123
@@ -592,7 +880,18 @@ function challenge_dynamic_type_1() {
         let result
         /********************************************************/
         // ĐIỀN VÀO CHỖ TRỐNG (3 cách)
+        // - Cách 1: condition
         // result = ???
+
+        // - Cách 2: Negative of negative
+        // result = ???
+
+        // - Cách 3: Wrapping function
+        // result = ???
+
+        // - Cách 4: Wrapping class
+        // result = ???
+
         /********************************************************/
         return result
     }
@@ -602,36 +901,36 @@ function challenge_dynamic_type_1() {
 }
 
 /**
- * Hãy đặt giá trị cho A sao cho giá trị return là `true`.
+ * Hãy đặt giá trị cho RESULT sao cho giá trị return là `true`.
  */
 function challenge_dynamic_type_2() {
     /********************************************************/
-    const A = null
+    const RESULT = null
     /********************************************************/
 
-    return (1 + 2 + '3' === A)
+    return (1 + 2 + '3' === RESULT)
 }
 
 /**
- * Hãy đặt giá trị cho strArr sao cho giá trị return là `true`.
+ * Hãy đặt giá trị cho RESULT sao cho giá trị return là `true`.
  */
 function challenge_dynamic_type_3() {
+    /********************************************************/
+    const RESULT = null
+    /********************************************************/
+
     const arr = [1, 2, 3]
 
-    /********************************************************/
-    const strArr = '' //???
-    /********************************************************/
-
-    return strArr === (arr + '')
+    return RESULT === (arr + '')
 }
 
 
 /**
- * Hãy đặt giá trị cho A sao cho giá trị return là `true`.
+ * Hãy đặt giá trị cho RESULT sao cho giá trị return là `true`.
  */
 function challenge_function_1() {
     /********************************************************/
-    const A = null
+    const RESULT = null
     /********************************************************/
 
     const delegate = function (f, g) {
@@ -641,22 +940,22 @@ function challenge_function_1() {
     const sayHi = (name) => ('Hello ' + name)
     const sayBye = (name) => ('See ya ' + name)
 
-    return (delegate(sayHi, sayBye)('CodeSchool') === A)
+    return (delegate(sayHi, sayBye)('CodeSchool') === RESULT)
 }
 
 /**
- * Hãy đặt giá trị cho A sao cho giá trị return là `true`.
+ * Hãy đặt giá trị cho RESULT sao cho giá trị return là `true`.
  */
 function challenge_function_2() {
     /********************************************************/
-    const A = null
+    const RESULT = null
     /********************************************************/
 
     const fn = function () {
         return arguments.length
     }
 
-    return (fn(1, 2, 3, 4, 5) === A)
+    return (fn(1, 2, 3, 4, 5) === RESULT)
 }
 
 
@@ -678,12 +977,15 @@ module.exports = {
     challenge_array_6,
     challenge_array_7,
     challenge_array_8,
+    challenge_array_9,
+    challenge_array_10,
     challenge_equal_1,
     challenge_equal_2,
     challenge_equal_3,
     challenge_equal_4,
     challenge_equal_5,
     challenge_equal_6,
+    challenge_equal_7,
     challenge_object_1,
     challenge_object_2,
     challenge_object_3,
@@ -692,6 +994,12 @@ module.exports = {
     challenge_object_6,
     challenge_object_7,
     challenge_object_8,
+    challenge_object_9,
+    challenge_object_10,
+    challenge_object_11,
+    challenge_object_12,
+    challenge_object_13,
+    challenge_object_14,
     challenge_dynamic_type_1,
     challenge_dynamic_type_2,
     challenge_dynamic_type_3,
