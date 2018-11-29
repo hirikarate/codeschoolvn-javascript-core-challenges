@@ -221,6 +221,13 @@ describe('challenge_object_7', () => {
     })
 })
 
+describe('challenge_object_8', () => {
+    it('Should equal true', () => {
+        const chal = quiz.challenge_object_8()
+        expect(chal).to.be.true
+    })
+})
+
 describe('challenge_dynamic_type_1', () => {
     it('Should equal true', () => {
         const chal = quiz.challenge_dynamic_type_1()

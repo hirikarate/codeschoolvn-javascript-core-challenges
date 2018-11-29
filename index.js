@@ -273,6 +273,11 @@ function challenge_array_5() {
     /********************************************************/
     const isEqual = function(arr1, arr2) {
         // ĐIỀN VÀO CHỖ TRỐNG
+        // Cách 1: for loop
+        //	- for (..;..;++i)
+        //	- for in
+        //	- for of
+        // Cách 2 (Functional): array.every(..)
     }
     /********************************************************/
 
@@ -479,6 +484,9 @@ function challenge_object_4() {
     /********************************************************/
     const isEqual = (objA, objB) => {
         // ĐIỀN VÀO CHỖ TRỐNG
+        // - Cách 1: for in
+        // - Cách 2: for of
+        // - Cách 3 (Functional): array.every(..)
     }
     /********************************************************/
 
@@ -523,12 +531,13 @@ function challenge_object_5() {
  * Hãy điền vào chỗ trống
  */
 function challenge_object_6() {
-    /********************************************************/
     const obj = {
         value: 6,
+    	/********************************************************/
         // ĐIỀN VÀO CHỖ TRỐNG
+        // ???
+    	/********************************************************/
     }
-    /********************************************************/
 
     const msg = 'Value is: '
     return (msg + obj === 'Value is: six')
@@ -545,6 +554,32 @@ function challenge_object_7() {
     /********************************************************/
 
     return (a == 1 && a == 2 && a == 3)
+    /* Hint:
+     * Cách 1: valueOf / toString
+     *   - ++
+     *   - array.pop
+     * Cách 2: Symbol.toPrimitive
+     *   - Object property++
+     *   - Global variable++
+     *   - Curried function: ((i) => () => ++i) (0)
+     * Cách 3: array.join = array.shift
+     */
+}
+
+
+/**
+ * Hãy điền vào chỗ trống
+ */
+function challenge_object_8() {
+    /********************************************************/
+    // ĐIỀN VÀO CHỖ TRỐNG
+    // ??
+    return (a === 1 && a === 2 && a === 3)
+    /********************************************************/
+    /* Hint:
+     * Cách 1: with()
+     * Cách 2: Object.defineProperty
+     */
 }
 
 /**
@@ -556,8 +591,8 @@ function challenge_dynamic_type_1() {
     const toBool = function(source) {
         let result
         /********************************************************/
-        // ĐIỀN VÀO CHỖ TRỐNG
-        // result = ???(source)
+        // ĐIỀN VÀO CHỖ TRỐNG (3 cách)
+        // result = ???
         /********************************************************/
         return result
     }
@@ -578,13 +613,12 @@ function challenge_dynamic_type_2() {
 }
 
 /**
- * Hãy điền vào chỗ trống
+ * Hãy đặt giá trị cho strArr sao cho giá trị return là `true`.
  */
 function challenge_dynamic_type_3() {
     const arr = [1, 2, 3]
 
     /********************************************************/
-    // ĐIỀN VÀO CHỖ TRỐNG
     const strArr = '' //???
     /********************************************************/
 
@@ -657,6 +691,7 @@ module.exports = {
     challenge_object_5,
     challenge_object_6,
     challenge_object_7,
+    challenge_object_8,
     challenge_dynamic_type_1,
     challenge_dynamic_type_2,
     challenge_dynamic_type_3,
