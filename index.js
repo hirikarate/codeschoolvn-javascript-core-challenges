@@ -1,10 +1,9 @@
 /**
- * 
+ * Hãy đặt giá trị cho RESULT sao cho RESULT giống với giá trị cuối cùng của `arr`
  */
 function challenge_async_1(arr) {
     // Biết: arr = []
 
-    // Hãy đặt giá trị cho RESULT sao cho RESULT giống với giá trị cuối cùng của `arr`
     /********************************************************/
     const RESULT = []
     /********************************************************/
@@ -21,12 +20,11 @@ function challenge_async_1(arr) {
 }
 
 /**
- * 
+ * Hãy đặt giá trị cho RESULT sao cho RESULT giống với giá trị cuối cùng của `arr`
  */
 function challenge_async_2(arr) {
     // Biết: arr = []
 
-    // Hãy đặt giá trị cho RESULT sao cho RESULT giống với giá trị cuối cùng của `arr`
     /********************************************************/
     const RESULT = []
     /********************************************************/
@@ -47,12 +45,11 @@ function challenge_async_2(arr) {
 }
 
 /**
- * 
+ * Hãy đặt giá trị cho RESULT sao cho RESULT giống với giá trị cuối cùng của `arr`
  */
 function challenge_async_3(arr) {
     // Biết: arr = []
 
-    // Hãy đặt giá trị cho RESULT sao cho RESULT giống với giá trị cuối cùng của `arr`
     /********************************************************/
     const RESULT = []
     /********************************************************/
@@ -75,12 +72,11 @@ function challenge_async_3(arr) {
 }
 
 /**
- * 
+ * Hãy đặt giá trị cho RESULT sao cho RESULT giống với giá trị cuối cùng của `arr`
  */
 function challenge_async_4(arr) {
     // Biết: arr = []
 
-    // Hãy đặt giá trị cho RESULT sao cho RESULT giống với giá trị cuối cùng của `arr`
     /********************************************************/
     const RESULT = []
     /********************************************************/
@@ -127,12 +123,11 @@ function challenge_async_5() {
 }
 
 /**
- *
+ * Hãy đặt giá trị cho RESULT sao cho RESULT giống với giá trị cuối cùng của `arr`
  */
 function challenge_async_6(arr) {
     // Biết: arr = []
 
-    // Hãy đặt giá trị cho RESULT sao cho RESULT giống với giá trị cuối cùng của `arr`
     /********************************************************/
     const RESULT = []
     /********************************************************/
@@ -196,12 +191,11 @@ function challenge_async_8() {
 }
 
 /**
- * Hãy đặt giá trị cho RESULT sao cho kết quả return là true
+ * Hãy đặt giá trị cho RESULT sao cho RESULT giống với giá trị cuối cùng của `arr`
  */
 function challenge_async_9(arr) {
     // Biết: arr = []
 
-    // Hãy đặt giá trị cho RESULT sao cho RESULT giống với giá trị cuối cùng của `arr`
     /********************************************************/
     const RESULT = []
     /********************************************************/
@@ -235,12 +229,11 @@ function readFile(filename) {
 }
 
 /**
- * Hãy đặt giá trị cho RESULT sao cho kết quả return là true
+ * Hãy đặt giá trị cho RESULT sao cho RESULT giống với giá trị cuối cùng của `arr`
  */
 function challenge_async_10(arr) {
     // Biết: arr = []
 
-    // Hãy đặt giá trị cho RESULT sao cho RESULT giống với giá trị cuối cùng của `arr`
     /********************************************************/
     const RESULT = []
     /********************************************************/
@@ -261,12 +254,11 @@ function challenge_async_10(arr) {
 }
 
 /**
- *
+ * Hãy chỉnh sửa để code chạy đúng
  */
 function challenge_async_11(arr) {
     // Biết: arr = []
 
-    // Hãy chỉnh sửa để code chạy đúng
     /********************************************************/
     try {
         const data = readFile('dummy.txt')
@@ -281,12 +273,11 @@ function challenge_async_11(arr) {
 }
 
 /**
- *
+ * Hãy chỉnh sửa để đọc 2 file song song
  */
 function challenge_async_12(arr) {
     // Biết: arr = []
 
-    // Hãy chỉnh sửa để đọc 2 file song song
     /********************************************************/
     try {
         readFile('dummy.txt')
@@ -310,12 +301,11 @@ function challenge_async_12(arr) {
 
 
 /**
- * Hãy đặt giá trị cho RESULT sao cho kết quả return là true
+ * Hãy đặt giá trị cho RESULT sao cho RESULT giống với giá trị cuối cùng của `arr`
  */
 function challenge_async_13(arr) {
     // Biết: arr = []
 
-    // Hãy đặt giá trị cho RESULT sao cho RESULT giống với giá trị cuối cùng của `arr`
     /********************************************************/
     const RESULT = []
     /********************************************************/
@@ -329,12 +319,11 @@ function challenge_async_13(arr) {
 
 
 /**
- * Hãy đặt giá trị cho RESULT sao cho kết quả return là true
+ * Hãy đặt giá trị cho RESULT sao cho RESULT giống với giá trị cuối cùng của `arr`
  */
 function challenge_async_14(arr) {
     // Biết: arr = []
 
-    // Hãy đặt giá trị cho RESULT sao cho RESULT giống với giá trị cuối cùng của `arr`
     /********************************************************/
     const RESULT = []
     /********************************************************/
@@ -342,6 +331,36 @@ function challenge_async_14(arr) {
     for (let i = 1; i <= 5; ++i) {
         setTimeout(() => arr.push(i), 0)
     }
+
+    return RESULT
+}
+
+/**
+ * Hãy đặt giá trị cho RESULT sao cho RESULT giống với giá trị cuối cùng của `arr`
+ */
+function challenge_async_15(arr) {
+    // Biết: arr = []
+
+    /********************************************************/
+    const RESULT = []
+    /********************************************************/
+
+    function foo() {
+        arr.push(1)
+
+        setTimeout(() => {
+            arr.push(2)
+        }, 500)
+
+    }
+
+    function bar() {
+        foo()
+        arr.push(3)
+    }
+
+    bar()
+    arr.push(4)
 
     return RESULT
 }
@@ -362,4 +381,5 @@ module.exports = {
     challenge_async_12,
     challenge_async_13,
     challenge_async_14,
+    challenge_async_15,
 }

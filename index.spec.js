@@ -160,3 +160,14 @@ describe('challenge_async_14', () => {
         }, 1000)
     })
 })
+
+describe('challenge_async_15', () => {
+    it('Should deep equal', (done) => {
+        const arr = []
+        const chal = quiz.challenge_async_15(arr)
+        setTimeout(() => {
+            expect(chal).to.deep.equal(arr)
+            done()
+        }, 1000)
+    })
+})
