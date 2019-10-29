@@ -56,7 +56,7 @@ describe('challenge_scope_2', () => {
         }
         expect(chal).not.to.exist
         expect(exception).to.exist
-        expect(exception.message).to.contain('val is not defined')
+        expect(exception.message).to.contain('is not defined')
     })
 })
 

@@ -144,14 +144,14 @@ function challenge_scope_2() {
     const A = 987
 
     const foo = function () {
-        return val
+        return num
     }
     const assignGlobal = function () {
-        val = 987
+        num = 987
     }
 
     assignGlobal()
-    return (A === foo() && A == global['val'])
+    return (A === foo() && A == global['num'])
 }
 
 
@@ -171,7 +171,7 @@ function challenge_scope_3() {
 
     const doIt = function () {
         var a = 5
-        return add(10)
+        return a + add(10)
     }
 
     return RESULT === doIt()
@@ -424,7 +424,7 @@ function challenge_equal_2() {
     /********************************************************/
 
     const arr = [2, 4, 6]
-    return (RESULT_ONE == arr[3] && RESULT_TWO == arr[3])
+    return (RESULT_ONE == arr[3] && RESULT_TWO == arr[3] && RESULT_ONE !== RESULT_TWO)
 }
 
 /**
@@ -446,7 +446,7 @@ function challenge_equal_3() {
  */
 function challenge_equal_4() {
     /********************************************************/
-    const RESULT = '33'
+    const RESULT = ''
     /********************************************************/
 
     const C = 1 + 2 + '3'
