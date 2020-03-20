@@ -3,7 +3,7 @@
  */
 function challenge_hoist_1() {
     /********************************************************/
-    const RESULT = 0
+    const RESULT = null
     /********************************************************/
 
     return RESULT === foo()
@@ -24,21 +24,20 @@ function challenge_hoist_1() {
  */
 function challenge_hoist_2() {
     /********************************************************/
-    const RESULT = 0
+    const RESULT = null
     /********************************************************/
 
     return RESULT === foo()
-
-    // Function declaration
-    var foo = function() {
-        return 88
-    }
 
     // Function expression
     function foo() {
         return 99
     }
 
+    // Function declaration
+    var foo = function() {
+        return 88
+    }
 }
 
 
@@ -125,11 +124,11 @@ function challenge_scope_1() {
     /********************************************************/
 
     const foo = function () {
-        return val
+        return val++
     }
 
     doSomeThing()
-    return (RESULT === foo() && RESULT == global['val'])
+    return (RESULT === foo())
 }
 
 /**
@@ -217,6 +216,54 @@ function challenge_array_1() {
     return RESULT === arr[1]
 }
 
+/**
+ * Hãy đặt giá trị cho RESULT sao cho giá trị return là `true`
+ */
+function challenge_array_1_extra_1() {
+    /********************************************************/
+    const RESULT = 0
+    /********************************************************/
+
+    const arr = Array(2, 4, 6)
+    return RESULT === (typeof arr[0])
+}
+
+/**
+ * Hãy đặt giá trị cho RESULT sao cho giá trị return là `true`
+ */
+function challenge_array_1_extra_2() {
+    /********************************************************/
+    const RESULT = 0
+    /********************************************************/
+
+    const arr = Array(2)
+    return RESULT === (typeof arr[0])
+}
+
+/**
+ * Hãy đặt giá trị cho RESULT sao cho giá trị return là `true`
+ */
+function challenge_array_1_extra_3() {
+    /********************************************************/
+    const RESULT = 0
+    /********************************************************/
+
+    const arr = Array.from([2, 4, 6])
+    return RESULT === (typeof arr[0])
+}
+
+/**
+ * Hãy đặt giá trị cho RESULT sao cho giá trị return là `true`
+ */
+function challenge_array_1_extra_4() {
+    /********************************************************/
+    const RESULT = 0
+    /********************************************************/
+
+    const arr = Array([2, 4, 6])
+    return RESULT === (typeof arr[0])
+}
+
 
 /**
  * Hãy đặt giá trị cho RESULT sao cho giá trị return là `true`
@@ -283,15 +330,15 @@ function challenge_array_5() {
 
         // Cách 2 (Functional): array.every(..)
         // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every
+        // Cách 3: array.reduce(..)
         // ???
 
     }
     /********************************************************/
 
-    const arrOne = [2, 4, 6]
-    const arrTwo = [2, 4, 6]
-
-    return isEqual(arrOne, arrTwo)
+    return isEqual([2, 4, 6], [2, 4, 6])
+        && !isEqual([1, 3], [1, 3, 5])
+        && isEqual([2, 4, NaN], [2, 4, NaN])
 }
 
 
@@ -380,9 +427,9 @@ function challenge_array_10() {
     // Cách 1:
         // C 1.1: Chỉ 01 dòng code
         // C 1.2: Chuyển (C 1.1) sang arrow function
-    function swap(first, sec) {
-        // ???
-    }
+    // function swap(first, sec) {
+    //     // ???
+    // }
 
     // Cách 2: "arguments" keyword
     // function swap ???
@@ -498,6 +545,21 @@ function challenge_equal_7() {
 
 
 /**
+ * Hãy đặt giá trị cho RESULT sao cho giá trị return là `true`.
+ */
+function challenge_equal_8() {
+    /********************************************************/
+    const RESULT = null
+    /********************************************************/
+
+    const A = parseInt('Twenty')
+    const B = A
+    const isEqual = (A === B)
+    return (isEqual === RESULT)
+}
+
+
+/**
  * Hãy đặt giá trị cho RESULT_ONE và RESULT_TWO sao cho giá trị return là `true`.
  */
 function challenge_object_1() {
@@ -566,25 +628,18 @@ function challenge_object_4() {
 
 
         // - Cách 2: for of
-        // Hint: Object.keys(), Object.values(), Object.entries()
+        // Hint: Object.keys()
 
 
-        // - Cách 3 (Functional): array.every(..)
+        // - Cách 3 (Functional): array.every(..) with Object.entries()
 
 
     }
     /********************************************************/
 
-    const objOne = {
-        name: 'CodeSchool',
-        age: 20,
-    }
-    const objTwo = {
-        name: 'CodeSchool',
-        age: 20,
-        // address: 'Saigon',
-    }
-    return isEqual(objOne, objTwo)
+    return isEqual({ name: 'Code' }, { name: 'Code' })
+        && !isEqual({ name: 'School' }, { name: 'School', age: 20 })
+        && isEqual({ age: NaN }, { age: NaN })
 }
 
 
@@ -628,7 +683,7 @@ function challenge_object_6() {
         value: 6,
     	/********************************************************/
         // ĐIỀN VÀO CHỖ TRỐNG
-        // Hint: valueOf / toString / Symbol.toPrimitive
+        // Hint: toString / Symbol.toPrimitive
 
     	/********************************************************/
     }
@@ -691,6 +746,46 @@ function challenge_object_9() {
     /********************************************************/
 
     return name === obj.name && tuoi === obj.age
+}
+
+function challenge_object_9_extra_1() {
+    const obj = {
+        name: 'Code',
+        learn: {
+            at: {
+                name: 'School',
+            },
+        },
+    }
+
+    /********************************************************/
+    // CHUYỂN ĐOẠN MÃ SAU SANG DẠNG "Object destructuring"
+    // const name = obj.learn.at.name
+    /********************************************************/
+
+    return name === 'School'
+}
+
+function challenge_object_9_extra_2() {
+    const arr = [
+        {
+            learn: {
+                at: 'CodeSchool',
+            },
+        },
+        {
+            learn: {
+                at: 'Great Courses',
+            },
+        },
+    ]
+
+    /********************************************************/
+    // CHUYỂN ĐOẠN MÃ SAU SANG DẠNG "Object và Array destructuring"
+    // const codeschool = arr[1].learn.at
+    /********************************************************/
+
+    return codeschool === 'Great Courses'
 }
 
 
@@ -879,7 +974,7 @@ function challenge_dynamic_type_1() {
     const toBool = function(source) {
         let result
         /********************************************************/
-        // ĐIỀN VÀO CHỖ TRỐNG (3 cách)
+        // ĐIỀN VÀO CHỖ TRỐNG (4 cách)
         // - Cách 1: condition
         // result = ???
 
@@ -897,7 +992,7 @@ function challenge_dynamic_type_1() {
     }
 
 
-    return (typeof toBool(A) === 'boolean')
+    return (toBool(A) === Boolean(A))
 }
 
 /**
@@ -922,6 +1017,106 @@ function challenge_dynamic_type_3() {
     const arr = [1, 2, 3]
 
     return RESULT === (arr + '')
+}
+
+/**
+ * Hãy đặt giá trị cho RESULT sao cho giá trị return là `true`.
+ */
+function challenge_dynamic_type_4() {
+    /********************************************************/
+    const RESULT_ONE = null
+    const RESULT_TWO = null
+    /********************************************************/
+
+    const A = 'true'
+    const B = true
+
+    return RESULT_ONE === (A == B)
+        && RESULT_TWO === (!A == !B)
+}
+
+
+/**
+ * Hãy đặt giá trị cho RESULT sao cho giá trị return là `true`.
+ */
+function challenge_dynamic_type_5() {
+    /********************************************************/
+    const RESULT = null
+    /********************************************************/
+
+    return RESULT === 2 - '1' + '3' + [4, 5]
+}
+
+
+/**
+ * Hãy đặt giá trị cho RESULT sao cho giá trị return là `true`.
+ */
+function challenge_dynamic_type_6() {
+    /********************************************************/
+    const RESULT = null
+    /********************************************************/
+
+    const obj = {}
+    Object.defineProperties(obj, {
+        city: {
+            value: 'Sai Gon',
+            enumerable: true,
+            configurable: false,
+        },
+        planet: {
+            value: 'Earth',
+            enumerable: false,
+            configurable: true,
+        },
+        galaxy: {
+            value: 'Milky Way',
+            enumerable: true,
+            configurable: true,
+        },
+    })
+    return RESULT === Object.keys(obj).join('#')
+}
+
+
+/**
+ * Hãy đặt giá trị cho RESULT sao cho giá trị return là `true`.
+ */
+function challenge_dynamic_type_7() {
+    /********************************************************/
+    const RESULT = null
+    /********************************************************/
+
+    const isEqual = Symbol('CodeSchool') === Symbol('CodeSchool')
+    return RESULT === isEqual
+}
+
+
+/**
+ * Hãy đặt giá trị cho RESULT sao cho giá trị return là `true`.
+ */
+function challenge_dynamic_type_8() {
+    /********************************************************/
+    const RESULT = null
+    /********************************************************/
+
+    const isEqual = Symbol.for('CodeSchool') === Symbol.for('CodeSchool')
+    return RESULT === isEqual
+}
+
+
+function challenge_dynamic_type_8() {
+    const obj = {
+        [Symbol('Code')]: 'School',
+        planet: 'Earth',
+        [Symbol.for('Great')]: 'Courses',
+        galaxy: 'Milky Way',
+    }
+    /********************************************************/
+    // SỬA ĐOẠN MÃ SAU ĐỂ KẾT QUẢ ĐÚNG
+    const value = Object.keys(obj).map(k => obj[k]).join()
+    /********************************************************/
+
+    return value === 'School,Courses'
 }
 
 
@@ -970,6 +1165,10 @@ module.exports = {
     challenge_scope_3,
     challenge_scope_4,
     challenge_array_1,
+    challenge_array_1_extra_1,
+    challenge_array_1_extra_2,
+    challenge_array_1_extra_3,
+    challenge_array_1_extra_4,
     challenge_array_2,
     challenge_array_3,
     challenge_array_4,
@@ -986,6 +1185,7 @@ module.exports = {
     challenge_equal_5,
     challenge_equal_6,
     challenge_equal_7,
+    challenge_equal_8,
     challenge_object_1,
     challenge_object_2,
     challenge_object_3,
@@ -995,6 +1195,8 @@ module.exports = {
     challenge_object_7,
     challenge_object_8,
     challenge_object_9,
+    challenge_object_9_extra_1,
+    challenge_object_9_extra_2,
     challenge_object_10,
     challenge_object_11,
     challenge_object_12,
@@ -1003,6 +1205,11 @@ module.exports = {
     challenge_dynamic_type_1,
     challenge_dynamic_type_2,
     challenge_dynamic_type_3,
+    challenge_dynamic_type_4,
+    challenge_dynamic_type_5,
+    challenge_dynamic_type_6,
+    challenge_dynamic_type_7,
+    challenge_dynamic_type_8,
     challenge_function_1,
     challenge_function_2,
 }
