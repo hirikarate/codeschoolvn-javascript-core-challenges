@@ -6,7 +6,7 @@ const { expect } = chai
 const quiz = require('./index')
 
 
-describe('challenge_async_1', () => {
+describe.only('challenge_async_1', () => {
     it('Should deep equal', (done) => {
         const arr = []
         const chal = quiz.challenge_async_1(arr)
@@ -35,7 +35,7 @@ describe('challenge_async_3', () => {
         setTimeout(() => {
             expect(chal).to.deep.equal(arr)
             done()
-        }, 800)
+        }, 100)
     })
 })
 

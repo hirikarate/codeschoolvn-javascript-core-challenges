@@ -58,11 +58,11 @@ function challenge_async_3(arr) {
 
     const timer = setTimeout(() => {
         arr.push(2)
-    }, 500)
+    }, 0)
 
     setTimeout(() => {
         arr.push(3)
-    }, 500)
+    }, 0)
 
     clearTimeout(timer)
 
@@ -261,7 +261,7 @@ function challenge_async_11(arr) {
 
     /********************************************************/
     try {
-        const data = readFile('dummy.txt')
+        let data = readFile('dummy.txt')
         arr.push(data)
 
         data = readFile('sample.txt')
