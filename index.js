@@ -1,17 +1,17 @@
 
 function Car() {
-    this.name = 'Car'
+    this.brand = 'Car'
     this.run = function () {
-        return this.name + ' running'
+        return this.brand + ' running'
     }
 }
 
 function Truck() {
-    this.name = 'Truck'
+    this.brand = 'Truck'
 }
 
 Truck.prototype.run = function () {
-    return `${this.name} running`
+    return `${this.brand} running`
 }
 
 
@@ -24,7 +24,7 @@ VinaxukiTruck.prototype = Object.create(Truck.prototype)
 VinaxukiTruck.prototype.constructor = VinaxukiTruck
 
 VinaxukiTruck.prototype.horn = function () {
-    return `${this.name} made in ${this.madeIn} pim pim`
+    return `${this.brand} made in ${this.madeIn} pim pim`
 }
 
 class VinTruck extends Truck {
@@ -38,7 +38,7 @@ class VinTruck extends Truck {
     }
 
     horn() {
-        return `${this.name} made by VinGroup pim pim`
+        return `${this.brand} made by VinGroup pim pim`
     }
 }
 
@@ -71,9 +71,9 @@ function challenge_oop_1_extra() {
     /********************************************************/
     const RESULT = null
     /********************************************************/
-    const carOne = new Car()
-    const carTwo = new Car()
-    const isRunEqual = (carOne.run === carTwo.run)
+    const truckOne = new VinaxukiTruck()
+    const truckTwo = new VinTruck()
+    const isRunEqual = (truckOne.run === truckTwo.run)
 
     return RESULT === isRunEqual
 }
@@ -85,9 +85,9 @@ function challenge_oop_2() {
     /********************************************************/
     const RESULT = null
     /********************************************************/
-    const truckOne = new VinaxukiTruck()
-    const truckTwo = new VinTruck()
-    const isRunEqual = (truckOne.run === truckTwo.run)
+    const carOne = new Car()
+    const carTwo = new Car()
+    const isRunEqual = (carOne.run === carTwo.run)
 
     return RESULT === isRunEqual
 }
@@ -122,11 +122,11 @@ function challenge_oop_3_extra() {
 
 
 class Earthling {
-    get name() {
+    get home() {
         return this._name
     }
 
-    set name(val) {
+    set home(val) {
         this._name = val
     }
 
@@ -136,20 +136,20 @@ class Earthling {
 }
 
 class Martian {
-    get name() {
-        return this._name
+    get home() {
+        return this._home
     }
 
-    set name(val) {
-        this._name = val
+    set home(val) {
+        this._home = val
     }
 
     constructor() {
-        this._name = 'Martian'
+        this._home = 'Martian'
     }
 
     greeting(friend) {
-        return `Hello ${friend}, my name is ${this.name}`
+        return `Hello ${friend}, my home is ${this.home}`
     }
 }
 
@@ -226,11 +226,11 @@ function challenge_oop_7() {
     const RESULT = null
     /********************************************************/
 
-    const name = 'Outer space'
+    const home = 'Outer space'
     const obj = {
-        name: 'Inner object',
+        home: 'Inner object',
         greeting: function () {
-            return `We are ${name}`
+            return `We are ${home}`
         }
     }
 
@@ -249,9 +249,9 @@ function challenge_oop_7_extra() {
     /********************************************************/
 
     const obj = {
-        name: 'Anonymous',
+        home: 'Anonymous',
         greeting: function () {
-            return `We are ${this.name}`
+            return `We are ${this.home}`
         }
     }
 
@@ -272,9 +272,9 @@ function challenge_oop_8() {
     /********************************************************/
 
     const obj = {
-        name: 'Anonymous',
+        home: 'Anonymous',
         greeting: function () {
-            return `We are ${this.name}`
+            return `We are from ${this.home}`
         }
     }
 
@@ -323,13 +323,13 @@ function challenge_oop_9(arr) {
     /********************************************************/
 
     const obj = {
-        name: 'Anonymous',
-        addName: function () {
-            arr.push(this.name)
+        home: 'Anonymous',
+        addHome: function () {
+            arr.push(this.home)
         }
     }
 
-    setTimeout(obj.addName, 500)
+    setTimeout(obj.addHome, 500)
 
     return RESULT
 }
@@ -346,13 +346,13 @@ function challenge_oop_10(arr) {
     /********************************************************/
 
     const obj = {
-        name: 'Anonymous',
-        addName: function () {
-            arr.push(this.name)
+        home: 'Anonymous',
+        addHome: function () {
+            arr.push(this.home)
         }
     }
 
-    setTimeout(() => obj.addName(), 500)
+    setTimeout(() => obj.addHome(), 500)
 
     return RESULT
 }
@@ -370,13 +370,13 @@ function challenge_oop_10_extra(arr) {
     /********************************************************/
 
     const obj = {
-        name: 'Anonymous',
-        addName: () => {
-            arr.push(this.name)
+        home: 'Anonymous',
+        addHome: () => {
+            arr.push(this.home)
         }
     }
 
-    setTimeout(() => obj.addName(), 500)
+    setTimeout(() => obj.addHome(), 500)
 
     return RESULT
 }
@@ -398,15 +398,15 @@ function challenge_oop_11(arr) {
     }
 
     const obj = {
-        name: 'Anonymous',
-        addName: function () {
+        home: 'Anonymous',
+        addHome: function () {
             delay(function () {
-                arr.push(this.name)
+                arr.push(this.home)
             }, 500)
         }
     }
 
-    obj.addName()
+    obj.addHome()
 
     return RESULT
 }
@@ -499,20 +499,20 @@ function challenge_oop_14(arr) {
  */
 function challenge_oop_15() {
     /********************************************************/
-    const RESULT = 'I am The second'
+    const RESULT = null
     /********************************************************/
 
     const objOne = {
-        name: 'The first',
+        home: 'The first',
         tellName: function () {
-            return `I am ${this.name}`
+            return `I am ${this.home}`
         }
     }
 
     const objTwo = {
-        name: 'The second',
+        home: 'The second',
         tellName: function () {
-            return `I am ${this.name}`
+            return `I am ${this.home}`
         }
     }
 
@@ -532,16 +532,16 @@ function challenge_oop_16() {
     /********************************************************/
 
     const objOne = {
-        name: 'The first',
+        home: 'The first',
         tellName: function (friendA, friendB) {
-            return `Hi ${friendA} & ${friendB}, I am ${this.name}`
+            return `Hi ${friendA} & ${friendB}, I am ${this.home}`
         }
     }
 
     const objTwo = {
-        name: 'The second',
+        home: 'The second',
         tellName: function (friendA, friendB) {
-            return `Hi ${friendA} & ${friendB}, I am ${this.name}`
+            return `Hi ${friendA} & ${friendB}, I am ${this.home}`
         }
     }
 
@@ -553,24 +553,24 @@ function challenge_oop_16() {
 
 class Friend {
 
-    get name() {
-        return this._name
+    get label() {
+        return this._label
     }
 
-    set name(val) {
-        this._name = val
+    set label(val) {
+        this._label = val
     }
 
     constructor() {
-        this._name = 'Pal'
+        this._label = 'Foe'
     }
 
     introduce() {
-        return `Treat your ${this.name} well`
+        return `Treat your ${this.label} well`
     }
 
-    getName() {
-        return this._name
+    getLabel() {
+        return this._label
     }
 }
 
@@ -581,22 +581,22 @@ class Enemy {
         return privateMap.get(this)
     }
 
-    get name() {
-        return this.props.name
+    get label() {
+        return this.props.label
     }
 
-    set name(val) {
-        this.props.name = val
+    set label(val) {
+        this.props.label = val
     }
 
     constructor() {
         privateMap.set(this, {
-            name: 'Foe'
+            label: 'Captain'
         })
     }
 
     introduce() {
-        return `You must love your ${this.name}`
+        return `You must obey your ${this.label}`
     }
 }
 
@@ -604,7 +604,7 @@ class Enemy {
 /**
  * Hãy đặt giá trị cho RESULT sao cho kết quả return là true
  */
-function challenge_oop_16() {
+function challenge_oop_16_extra() {
     const backup = Friend.prototype.introduce
 
     /********************************************************/
@@ -640,8 +640,8 @@ function challenge_oop_17() {
 }
 
 
-global.target = 'The Creator'
-const target = 'Alien'
+global.label = 'The Creator'
+const label = 'Alien'
 
 /**
  * Hãy đặt giá trị cho RESULT sao cho kết quả return là true
@@ -652,9 +652,9 @@ function challenge_oop_18() {
     /********************************************************/
 
     const obj = {
-        target: 'Stranger',
+        label: 'Stranger',
         introduce: () => {
-            return `${this.target} is always looking at you`
+            return `${this.label} is always looking at you`
         }
     }
 
@@ -663,7 +663,9 @@ function challenge_oop_18() {
 
     const message = introFn.apply(obj)
 
-    // NOTE: Look at the unit test `describe('challenge_oop_18')`
+    // NOTE:
+    // - Look at line 737 in this file
+    // - Look at the unit test `describe('challenge_oop_18')`
     return RESULT === message
 }
 
@@ -676,9 +678,9 @@ function challenge_oop_19() {
     /********************************************************/
 
     const obj = {
-        target: 'Stranger',
-        introduce: () => {
-            return `Treat ${this.target} like your relatives`
+        label: 'Stranger',
+        introduce() {
+            return `Treat ${this.label} like your relatives`
         }
     }
 
@@ -699,7 +701,7 @@ function challenge_oop_20() {
     /********************************************************/
 
     const friend = new Friend
-    const isEqual = ((typeof friend.name) === (typeof friend.getName))
+    const isEqual = ((typeof friend.home) === (typeof friend.getLabel))
 
     return RESULT === isEqual
 }
@@ -729,9 +731,10 @@ module.exports = {
     challenge_oop_14,
     challenge_oop_15,
     challenge_oop_16,
+    challenge_oop_16_extra,
     challenge_oop_17,
     challenge_oop_18,
-    target: 'Neighbor',
+    label: 'Neighbor',
     challenge_oop_19,
     challenge_oop_20,
 }

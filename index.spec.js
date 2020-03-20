@@ -6,7 +6,7 @@ const { expect } = chai
 const quiz = require('./index')
 
 
-describe('challenge_oop_1', () => {
+describe.only('challenge_oop_1', () => {
     it('should be true', () => {
         const chal = quiz.challenge_oop_1()
         expect(chal).to.be.true
@@ -187,6 +187,13 @@ describe('challenge_oop_16', () => {
     })
 })
 
+describe('challenge_oop_16_extra', () => {
+    it('should be true', () => {
+        const chal = quiz.challenge_oop_16_extra()
+        expect(chal).to.be.true
+    })
+})
+
 describe('challenge_oop_17', () => {
     it('should be true', () => {
         const chal = quiz.challenge_oop_17()
@@ -204,7 +211,7 @@ describe('challenge_oop_18', () => {
 
 describe('challenge_oop_19', () => {
     it('should be true', () => {
-        quiz.target += 's'
+        quiz.label += 's'
         const chal = quiz.challenge_oop_19()
         expect(chal).to.be.true
     })
